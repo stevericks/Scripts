@@ -1,3 +1,3 @@
 Install-WindowsFeature NET-Framework-Features
-RSAT -FAT -SNMP Tools
+Install-WindowsFeature RSAT-SNMP
 Install-WindowsFeature -Name Web-Server -IncludeManagementTools
