@@ -4,6 +4,9 @@ Install-WindowsFeature -Name Web-Server -IncludeManagementTools
 
 # This scrpt will install Chocolatey Package Manager, update installed applications then restart the computer on completion
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Install-PackageProvider -Name NuGet
+
 # Enable and Start Services
 Write-Host "Enabling and Starting Services"
 Set-Service -Name bits -StartupType Automatic
