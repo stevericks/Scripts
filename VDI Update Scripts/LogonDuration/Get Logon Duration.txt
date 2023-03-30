@@ -1,0 +1,5 @@
+Run powershell as admin
+
+import-module C:\Scripts\LogonDuration\LogonDurationAnalysis_Signed.ps1
+
+Get-logondurationanalysis -username ********** -Userdomain ottouk
