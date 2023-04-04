@@ -1,0 +1,12 @@
+# Get the DVD drive object
+$dvdDrive = Get-CimInstance -ClassName Win32_CDROMDrive | Where-Object {$_.DriveType -eq 5}
+
+# Eject the DVD drive
+$ejectResult = $dvdDrive.eject()
+
+# Check the result of the eject operation
+if ($ejectResult.ReturnValue -eq 0) {
+    Write-Output "DVD drive ejected successfully."
+} else {
+    Write-Output "DVD drive eject failed with error code $($ejectResult.ReturnValue)."
+}
